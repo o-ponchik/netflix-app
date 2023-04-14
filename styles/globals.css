@@ -57,6 +57,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   background-color: transparent;
+  color: var(--white10);
   text-transform: none;
   margin: 0;
   border: 0px;

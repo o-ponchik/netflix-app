@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Roboto_Slab } from "next/font/google";
 import styles from "@components/styles/Home.module.css";
+import Banner from "@components/components/banner/banner";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
@@ -16,6 +17,16 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <h1>Netflix</h1>
+
+        <Banner
+          title="Clifford the red dog"
+          subTitle="a very cute dog"
+          imgUrl="/static/clifford.webp"
+        />
+
+        {/* <NavBar />
+   
+        <Card /> */}
       </div>
     </>
   );
