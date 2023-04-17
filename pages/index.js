@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Roboto_Slab } from "next/font/google";
 import styles from "@components/styles/Home.module.css";
 import Banner from "@components/components/banner/banner";
+import NavBar from "@components/components/nav/navbar";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
@@ -16,7 +17,8 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <h1>Netflix</h1>
+
+        <NavBar username="mariiamatv@gmail.com" />
 
         <Banner
           title="Clifford the red dog"
@@ -24,9 +26,7 @@ export default function Home() {
           imgUrl="/static/clifford.webp"
         />
 
-        {/* <NavBar />
-   
-        <Card /> */}
+        {/* <Card /> */}
       </div>
     </>
   );
