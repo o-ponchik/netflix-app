@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./navbar.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavBar = (props) => {
   const { username } = props;
+
   const router = useRouter();
+
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleClickHome = (e) => {
     e.preventDefault();
@@ -17,12 +21,25 @@ const NavBar = (props) => {
     router.push("/browse/my-list");
   };
 
+  const handleDropdown = (e) => {
+    e.preventDefault();
+    setShowDropdown((prev) => !prev);
+  };
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <a className={styles.logoLink}>
-            <div className={styles.logoWrapper}>Netflix</div>
+            <div className={styles.logoWrapper}>
+              {" "}
+              <Image
+                src="/static/netflix.svg"
+                alt="Netflix logo"
+                width="128"
+                height="34"
+              />
+            </div>
           </a>
 
           <ul className={styles.navItems}>
@@ -35,19 +52,26 @@ const NavBar = (props) => {
           </ul>
           <nav className={styles.navContainer}>
             <div>
-              <button className={styles.usernameBtn}>
+              <button className={styles.usernameBtn} onClick={handleDropdown}>
                 <p className={styles.username}>{username}</p>
-                {/* Expand icon */}
+                <Image
+                  src="/static/expand_more.svg"
+                  alt="Expand more"
+                  width="24"
+                  height="24"
+                />
               </button>
 
-              <div className={styles.navDropdown}>
-                <div>
-                  <Link href="/login" className={styles.linkName}>
-                    Sign out
-                  </Link>
-                  <div className={styles.lineWrapper}></div>
+              {showDropdown && (
+                <div className={styles.navDropdown}>
+                  <div>
+                    <Link href="/login" className={styles.linkName}>
+                      Sign out
+                    </Link>
+                    <div className={styles.lineWrapper}></div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </nav>
         </div>
