@@ -4,6 +4,7 @@ import { Roboto_Slab } from "next/font/google";
 import styles from "@components/styles/Home.module.css";
 import Banner from "@components/components/banner/banner";
 import NavBar from "@components/components/nav/navbar";
+import Card from "@components/components/card/card";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
@@ -26,7 +27,9 @@ export default function Home() {
           imgUrl="/static/clifford.webp"
         />
 
-        {/* <Card /> */}
+        <Card imgUrl="/static/clifford.webp" size="large" />
+        <Card imgUrl="/static/clifford.webp" size="medium" />
+        <Card imgUrl="/static/clifford.webp" size="small" />
       </div>
     </>
   );
