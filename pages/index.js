@@ -10,14 +10,26 @@ import { getVideos } from "@components/lib/videos";
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
 export async function getServerSideProps(context) {
-  const disneyVideos = await getVideos();
+  const disneyVideos = await getVideos("disney trailer");
+  const productivityVideos = await getVideos("Productivity");
+
+  const travelVideos = await getVideos("travel ukraine");
+  // const popularVideos = await getVideos();
 
   return {
-    props: { disneyVideos: JSON.parse(JSON.stringify(disneyVideos)) },
+    props: {
+      disneyVideos: JSON.parse(JSON.stringify(disneyVideos)),
+      productivityVideos: JSON.parse(JSON.stringify(productivityVideos)),
+      travelVideos: JSON.parse(JSON.stringify(travelVideos)),
+    },
   };
 }
 
-export default function Home({ disneyVideos }) {
+export default function Home({
+  disneyVideos,
+  productivityVideos,
+  travelVideos,
+}) {
   console.log({ disneyVideos });
   return (
     <>
@@ -39,8 +51,13 @@ export default function Home({ disneyVideos }) {
 
         <div className={styles.sectionWrapper}>
           <SectionCards title="Disney" videos={disneyVideos} size="large" />
-          <SectionCards title="Disney" videos={disneyVideos} size="medium" />
-          <SectionCards title="Disney" videos={disneyVideos} size="small" />
+          <SectionCards title="Travel" videos={travelVideos} size="small" />
+          <SectionCards
+            title="Productivity"
+            videos={productivityVideos}
+            size="medium"
+          />
+          <SectionCards title="Popular" videos={disneyVideos} size="small" />
         </div>
       </div>
     </>
