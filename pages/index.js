@@ -10,7 +10,7 @@ import { getVideos } from "@components/lib/videos";
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
 export async function getServerSideProps(context) {
-  const disneyVideos = getVideos();
+  const disneyVideos = await getVideos();
 
   return {
     props: { disneyVideos: JSON.parse(JSON.stringify(disneyVideos)) },
