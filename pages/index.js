@@ -10,6 +10,12 @@ import SectionCards from "@components/components/card/section-cards";
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
 export default function Home() {
+  const disneyVideos = [
+    { imgUrl: "/static/clifford.webp" },
+    { imgUrl: "/static/clifford.webp" },
+    { imgUrl: "/static/clifford.webp" },
+  ];
+
   return (
     <>
       <div className={styles.container}>
@@ -29,7 +35,9 @@ export default function Home() {
         />
 
         <div className={styles.sectionWrapper}>
-          <SectionCards title="Disney" />
+          <SectionCards title="Disney" videos={disneyVideos} size="large" />
+          <SectionCards title="Disney" videos={disneyVideos} size="medium" />
+          <SectionCards title="Disney" videos={disneyVideos} size="small" />
         </div>
       </div>
     </>
