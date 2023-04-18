@@ -5,6 +5,7 @@ import styles from "@components/styles/Home.module.css";
 import Banner from "@components/components/banner/banner";
 import NavBar from "@components/components/nav/navbar";
 import Card from "@components/components/card/card";
+import SectionCards from "@components/components/card/section-cards";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
@@ -27,9 +28,7 @@ export default function Home() {
           imgUrl="/static/clifford.webp"
         />
 
-        <Card imgUrl="/static/clifford.webp" size="large" />
-        <Card size="medium" />
-        <Card imgUrl="/static/clifford.webp" size="small" />
+        <SectionCards title="Disney" />
       </div>
     </>
   );
