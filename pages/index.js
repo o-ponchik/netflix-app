@@ -9,9 +9,16 @@ import { getVideos } from "@components/lib/videos";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
-export default function Home() {
+export async function getServerSideProps(context) {
   const disneyVideos = getVideos();
 
+  return {
+    props: { disneyVideos: JSON.parse(JSON.stringify(disneyVideos)) },
+  };
+}
+
+export default function Home({ disneyVideos }) {
+  console.log({ disneyVideos });
   return (
     <>
       <div className={styles.container}>
