@@ -4,17 +4,13 @@ import { Roboto_Slab } from "next/font/google";
 import styles from "@components/styles/Home.module.css";
 import Banner from "@components/components/banner/banner";
 import NavBar from "@components/components/nav/navbar";
-import Card from "@components/components/card/card";
 import SectionCards from "@components/components/card/section-cards";
+import { getVideos } from "@components/lib/videos";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
 export default function Home() {
-  const disneyVideos = [
-    { imgUrl: "/static/clifford.webp" },
-    { imgUrl: "/static/clifford.webp" },
-    { imgUrl: "/static/clifford.webp" },
-  ];
+  const disneyVideos = getVideos();
 
   return (
     <>
