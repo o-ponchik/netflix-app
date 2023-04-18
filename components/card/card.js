@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import cls from "classnames";
 
 const Card = (props) => {
-  const { imgUrl = "/static/movie.avif", size } = props;
+  const { imgUrl = "/static/movie.avif", size, id } = props;
 
   const [imgSrc, setImgSrc] = useState(imgUrl);
 
@@ -20,10 +20,12 @@ const Card = (props) => {
     setImgSrc("/static/movie.avif");
   };
 
+  const scale = id === 0 ? { scaleY: 1.1 } : { scale: 1.1 };
+
   return (
     <div className={styles.container}>
       <motion.div
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ ...scale }}
         className={cls(styles.imgMotionWrapper, classMap[size])}
       >
         <Image
