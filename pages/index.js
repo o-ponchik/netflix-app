@@ -6,6 +6,7 @@ import Banner from "@components/components/banner/banner";
 import NavBar from "@components/components/nav/navbar";
 import SectionCards from "@components/components/card/section-cards";
 import { getVideos, getPopularVideos } from "@components/lib/videos";
+import { magic } from "@components/lib/magic-client";
 
 const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
@@ -33,7 +34,8 @@ export default function Home({
   travelVideos,
   popularVideos,
 }) {
-  console.log({ disneyVideos });
+  console.log({ magic });
+
   return (
     <>
       <div className={styles.container}>
