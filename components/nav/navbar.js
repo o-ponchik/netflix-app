@@ -30,7 +30,7 @@ const NavBar = (props) => {
     <>
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <a className={styles.logoLink}>
+          <Link href="/" className={styles.logoLink}>
             <div className={styles.logoWrapper}>
               {" "}
               <Image
@@ -40,7 +40,7 @@ const NavBar = (props) => {
                 height="34"
               />
             </div>
-          </a>
+          </Link>
 
           <ul className={styles.navItems}>
             <li className={styles.navItem} onClick={handleClickHome}>
