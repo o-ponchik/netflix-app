@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "../styles/Login.module.css";
 
 const Login = () => {
   const [userMsg, setUserMsg] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const router = useRouter();
 
   const handleOnChangeEmail = (e) => {
     setUserMsg("");
@@ -19,7 +21,11 @@ const Login = () => {
     console.log("Hi");
 
     if (userEmail) {
-      //
+      if (userEmail === "mat@gmail.com") {
+        router.push("/");
+      } else {
+        setUserMsg("Something went wrong logging in");
+      }
     } else {
       setUserMsg("Enter a valid email address");
     }
@@ -52,7 +58,7 @@ const Login = () => {
         <div className={styles.mainWrapper}>
           <h1 className={styles.signinHeader}>Sign In</h1>
           <input
-            type="text"
+            type="email"
             name=""
             id=""
             placeholder="Email address"
