@@ -47,6 +47,7 @@ export default function Home({
           <NavBar username="mariiamatv@gmail.com" />
 
           <Banner
+            videoId="4zH5iYM4wJo"
             title="Clifford the red dog"
             subTitle="a very cute dog"
             imgUrl="/static/clifford.webp"
