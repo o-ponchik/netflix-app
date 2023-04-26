@@ -21,8 +21,6 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  // const res = await fetch("https://.../posts");
-  // const posts = await res.json();
   const listOfVideos = ["mYfJxlgR2jw", "4zH5iYM4wJo", "KCPEHsAViiQ"];
 
   const paths = listOfVideos.map((videoId) => ({
@@ -34,7 +32,6 @@ export async function getStaticPaths() {
 
 const Video = ({ video }) => {
   const router = useRouter();
-  console.log({ router });
 
   const {
     title,
